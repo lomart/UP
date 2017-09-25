@@ -1,0 +1,32 @@
+/* border */
+
+// une bordure est définie par
+// - up-b-color  : couleur
+// sauf précision supplémentaire : 1px solid
+
+[class*="bd-"] {
+    border-width:1px;
+    border-style:solid;
+}
+
+@mixin border ( $poscode:'',  // l, t, r, b
+$posrule:'' )  // -left, -top, -right, -bottom
+{
+    .bd#{$poscode}0{ border#{$posrule}-width:$up-border-0 !important}
+    .bd#{$poscode}1{ border#{$posrule}-width:$up-border-1 !important}
+    .bd#{$poscode}2{ border#{$posrule}-width:$up-border-2 !important}
+    .bd#{$poscode}3{ border#{$posrule}-width:$up-border-3 !important}
+}
+
+@include border();
+@include border('l','-left');
+@include border('t','-top');
+@include border('r','-right');
+@include border('b','-bottom');
+
+.bd-solid {border-style:solid !important}
+.b-dotted {border-style:dotted !important}
+
+// ============ ARRONDI
+.bd-rond    {border-radius:50%}
+.bd-arrondi {border-radius:5px}

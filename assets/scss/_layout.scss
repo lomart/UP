@@ -1,0 +1,82 @@
+/*position*/
+
+// Pour mémoire, le positionnement est aussi gérer par:
+// .up-cell{display:table-cell}
+// .fg-xxx flexbox
+// mcenter, mleft, mright : marge auto autour d'un bloc
+
+// .clear : voir base
+
+// ==== CONTAINER
+// bloc permet de nettoyer avant et après. aucun ajout de marges
+.bloc {
+  @extend .clear;
+}
+
+.bloc1 {
+  $space : space(1);
+  margin: $space 0;
+  padding:$space ($space / 2);
+  // style
+  border: 1px solid $grisTresClair;
+  @extend .ombre;
+  @extend .tc;
+  // nettoyage avant/après
+  @extend .clear;
+  // on supprime les marges des enfants
+  > *:first-child {margin-top:0}
+  > *:last-child {margin-bottom:0}
+}
+
+@for $i from 2 through 3 {
+  .bloc#{$i} {
+    @extend .bloc1;
+    $space : space($i);
+    margin: $space 0;
+    padding:$space ($space / 2);
+  }
+}
+
+// ==== DISPLAY
+.display-none         {display:none}
+.display-inline-block {display:inline-block}
+.display-inline       {display:inline}
+.display-block        {
+                        display:block;
+                        @extend .clear;
+                      }
+
+// ==== POSITION STICKY
+.pos-sticky   {position:sticky; top:0; z-index:1}
+.pos-relative {position:relative}
+
+// ==== POSITION ABSOLUTE
+
+// tip: utiliser un margin/padding pour le décalage
+.abs-bloc   {
+  @extend .pos-relative;}
+.abs-left   {
+  position:absolute;
+  left:0;top:50%;
+  transform:translate(0%,-50%);}
+.abs-right  {
+  position:absolute;
+  right:0;top:50%;
+  transform:translate(0%,-50%); }
+.abs-top    {
+  position:absolute;
+  top:0}
+.abs-bottom {
+  position:absolute;
+  bottom:0}
+.abs-center {
+  position:absolute;
+  top:50%; left:50%;
+  transform:translate(-50%,-50%);
+}
+
+// positionnement flottant
+
+.float-left   {float:left}
+.float-right  {float:right}
+.float-clear  {@extend .clear;}

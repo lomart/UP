@@ -1,0 +1,17 @@
+/*cell*/
+$pf : '';
+
+// conteneur
+.#{$pf}cell-row    {display:table;width:100%}
+
+// cellules
+.#{$pf}cell        {display:table-cell}
+
+// alignement vertical
+.#{$pf}cell-top    {vertical-align:top}
+.#{$pf}cell-center {vertical-align:middle}
+.#{$pf}cell-bottom {vertical-align:bottom}
+
+// Clear
+.#{$pf}cell-row:before,
+.#{$pf}cell-row:after{content:"";display:table;clear:both}

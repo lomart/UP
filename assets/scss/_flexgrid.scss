@@ -1,0 +1,169 @@
+/* FLEXGRID */
+
+// Gestion d'une grille 12 colonnnes avec Flexbox
+// avec bloc supportant padding, border, background-color
+// ------------------------------------------------------
+// ### Classes au niveau du bloc container (DIV, UL, OL)
+// fg-row    : obligatoire
+// fg-gap	   : ajoute une marge entre les cellules
+// fg-auto-[bp]#  : blocs enfants sur # colonnes (1 à 6). bp=breakpoint
+//
+// ### Classes au niveau des cellules blocs enfants (DIV, P, LI)
+// fg-c[bp]# : nombre de colonnes de 0 à 12 occupées par la cellules (equ bootstrap)
+//               note: 0 cache la cellule
+// fg-ord-[bp]# : position de la cellule (1 à 6)
+//
+// ### Classes de mise en forme au niveau du bloc container (fg-row)
+// fg-center : centre les cellules
+// fg-start  : aligne les cellules sur le début du bloc (gauche en horizontal) (défaut)
+// fg-end    : aligne les cellules sur la fin du bloc (droite en horizontal)
+// fg-between: répartit l'espace entre les cellules
+// fg-around : répartit l'espace entre et autour des cellules
+//
+// fg-grow: augmente proportionnellement les cellules pour remplir la ligne
+//
+// fg-vcenter : aligne verticalement les cellules d'une même ligne
+// fg-vtop    : aligne en haut les cellules d'une même ligne
+// fg-vbottom : aligne en bas les cellules d'une même ligne
+// fg-vfill   : même hauteur pour toutes les cellules d'une même ligne (défaut)
+
+
+$prefix : 'fg-';
+
+$gap : 1rem !default;
+
+$grow   :0;  // facteur de grossisement par défaut.
+			 // 1=les cellules remplissent toujours la lignes
+$shrink :1;  // facteur de rétrecissement par défaut
+
+// ==============================================================================
+// ==== MIXINS & FONCTIONS
+// ==============================================================================
+
+// largeur des cellules: fg-c[bp][0-12] / fg-auto
+
+@mixin make_cell($bp:'', $maxcol:12) {
+	// 0 pour masquer la cellule
+	.#{$prefix}c#{$bp}0 { display: none }
+
+	// si pas de largeur indiquée, on traite comme auto
+	[class*="#{$prefix}c#{$bp}"],
+	.#{$prefix}#{$bp}auto {
+	  flex: $grow $shrink auto;
+	}
+
+	// largeur des cellules de 1 à 12
+	@for $i from 1 through $maxcol {
+		.#{$prefix}row > .#{$prefix}c#{$bp}#{$i} {
+			width: calc(100%/#{$maxcol}*#{$i})
+		}
+		.#{$prefix}gap > .#{$prefix}c#{$bp}#{$i} {
+			width: calc(100%/#{$maxcol}*#{$i} - #{$gap})
+		}
+	}
+}
+
+// largeur des cellules
+// note: à utiliser avant make_cell pour priorité des règles
+
+@mixin make_autogrid($bp:'', $maxcol:6) {
+  @for $i from 1 through $maxcol {
+	.#{$prefix}row.#{$prefix}auto-#{$bp}#{$i} > * {
+		width: calc(100%/#{$i})
+	}
+	.#{$prefix}gap.#{$prefix}auto-#{$bp}#{$i} > * {
+		width: calc(100%/#{$i} - #{$gap})
+	}
+  }
+}
+
+// Ordre des cellules.
+
+@mixin make_order($bp:'', $nb-max-order:6) {
+	@for $i from 1 through $nb-max-order {
+		.#{$prefix}ord-#{$bp}#{$i} {order:$i - $nb-max-order - 1};
+	}
+	// ordre au niveau row
+	.#{$prefix}#{$bp}reverse {flex-direction: row-reverse;}
+}
+
+
+// ==============================================================================
+// ==== REGLES GENERALES & CONTAINER
+// ==============================================================================
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// propriétés de base et par défaut pour UPFG
+.#{$prefix}row {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: stretch;
+  // si UL/OL
+  list-style: none;
+  padding: 0;
+}
+
+// marges négatives sur row pour annuler marges latérales des cellules de bouts de ligne
+.#{$prefix}gap {
+  margin-left: -$gap / 2;
+  margin-right: -$gap / 2;
+}
+
+// --- Mise en forme
+
+.#{$prefix}center 	{ justify-content: center; }
+.#{$prefix}start	  { justify-content: flex-start; }
+.#{$prefix}end 		  { justify-content: flex-end; }
+.#{$prefix}between,
+.#{$prefix}entre 	  { justify-content: space-between; }
+.#{$prefix}around,
+.#{$prefix}autour 	{ justify-content: space-around; }
+
+// direction secondaire (cross)
+// .#{$prefix}column { flex-direction: column; }  // non géré
+.#{$prefix}vtop 	 { align-items: flex-start; }  // defaut
+.#{$prefix}vbottom { align-items: flex-end; }
+.#{$prefix}vcenter { align-items: center; }
+.#{$prefix}vfill 	 { align-items: stretch; }
+
+.#{$prefix}child-vcenter>* {display:flex;align-items:center}
+.#{$prefix}child-center>* {display:flex;justify-content:center}
+// ==============================================================================
+// ==== REGLES POUR LES CELLULES
+// ==============================================================================
+
+// Ajout des marges pour les cellules avec gap
+.#{$prefix}gap > * {
+  // width: calc(100% - #{$gap});
+  margin: $gap / 2;
+}
+
+// ==============================================================================
+// ==== REGLES DEPENDANTES MEDIAQUERIES
+// ==============================================================================
+
+// les règles sans bp sont par défaut
+@include make_autogrid();
+@include make_cell();
+@include make_order();
+
+// agrandit les cellules pour remplir la ligne
+.#{$prefix}grow > * {flex-grow:1}
+
+@media all and (max-width:$breakpoint-s) {
+	.#{$prefix}row > [class*="#{$prefix}c"] {width:100%} // sur mobile 100% sauf précison
+	@include make_autogrid('s',3);
+	@include make_cell('s');
+	@include make_order('s');
+}
+
+@media all and (min-width:$breakpoint-s) and (max-width:$breakpoint-m) {
+	@include make_autogrid('m');
+	@include make_cell('m');
+	@include make_order('m');
+}

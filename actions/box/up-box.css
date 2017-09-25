@@ -1,0 +1,26 @@
+.up-box {padding:0 !important}
+.up-box  h3{border:none;margin:0;padding:5px}
+.up-box>div{border:none;margin:0;padding:5px}
+
+.up-box.info {border:1px #0074d9 solid; border-left-width:8px; background-color:azure}
+.up-box.info h3 {background-color:#0074d9;color:white}
+.up-box-img-left {float:left; max-width:20%;}
+
+.up-box.danger {border:2px gold solid; background-color:moccasin}
+.up-box.danger h3 {background-color:gold; color: crimson; border:none}
+
+fieldset.up-box-cheval {
+    background-color: #eee;
+    border:#bbb 1px solid;
+    padding: 0 10px 10px;
+    legend {
+        display:inline-block;
+        width: auto;
+        margin-bottom:0;
+        border:0 none;
+        border-radius:10px;
+        padding: 0 10px;
+        background-color: #333;
+        color:#fff;
+    }
+}

@@ -1,0 +1,73 @@
+/*color*/
+//------------------------------------------------
+// COLORATION TEXTE, FOND, BORDURE
+//................................................
+// Il faut déclarer les couleurs du template dans
+// les variables, puis lancer le mixin par :
+// .mixin_up_color(rouge, $rouge)
+// Il va créer les classes :
+// .up-rouge
+// .up-hover-rouge
+// .up-text-rouge
+//------------------------------------------------
+
+@mixin up_color($colorname, $colorval, $colorinverse:'') {
+    // background
+    .bg-#{$colorname},
+    .bg-hover-#{$colorname}:hover {
+        background-color: $colorval !important;
+        color: colorContraste($colorval);
+    }
+    // texte
+    .t-#{$colorname},
+    .t-hover-#{$colorname}:hover {
+        color: $colorval !important
+    }
+    // bordures
+    .bd-#{$colorname},
+    .bd-hover-#{$colorname}:hover,
+        {border-color: $colorval !important
+    }
+}
+
+// -----------------------------------------------------------
+// Pour les toutes les couleurs:
+//   up-color, up-text-color, up-border-color
+//   et les versions hover
+// -----------------------------------------------------------
+
+// info: ne fonctionne pas avec scssphp
+// @each $colorname, $colorval in $colorlist {
+//	@include up_color($colorname, $colorval);
+//}
+
+@include up_color("noir", $noir);
+@include up_color("grisFonce", $grisFonce);
+@include up_color("gris", $gris);
+@include up_color("grisClair", $grisClair);
+@include up_color("grisTresClair", $grisTresClair);
+@include up_color("blanc", $blanc);
+
+@include up_color("bleuFonce", $bleuFonce);
+@include up_color("bleu", $bleu);
+@include up_color("bleuClair", $bleuClair);
+@include up_color("bleuTresClair", $bleuTresClair);
+@include up_color("vertFonce", $vertFonce);
+@include up_color("vert", $vert);
+@include up_color("vertClair", $vertClair);
+@include up_color("brun", $brun);
+@include up_color("beige", $beige);
+@include up_color("rougeFonce", $rougeFonce);
+@include up_color("rouge", $rouge);
+@include up_color("rougeClair", $rougeClair);
+@include up_color("jauneFonce", $jauneFonce);
+@include up_color("jaune", $jaune);
+@include up_color("jauneClair", $jauneClair);
+@include up_color("orange", $orange);
+@include up_color("rose", $rose);
+@include up_color("violet", $violet);
+@include up_color("transparent", transparent);
+
+// === OMBRAGE
+
+// voir _base

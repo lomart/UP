@@ -1,0 +1,39 @@
+//
+//           REGLES CSS DISPONIBLEs POUR TOUTES LES ACTIONS
+//
+
+//-- Préfixe des classes de style
+$pfx : 'up' !default;
+
+// les variables spécifiques du webmaster
+// -----------------------
+// créer un fichier variables.scss, puis décommenter la ligne suivante
+// @import "variables";
+// -----------------------
+
+// les partiels de UP
+@import "scss/variables";        // les variables par défaut
+@import "scss/util/functions";   // fonctions générales
+@import "scss/util/base";        // mixins généraux
+
+@import "scss/color";      // les couleurs (5.2ko)
+@import "scss/layout";     // display, position, float, ... (1.1ko)
+@import "scss/cell";       // alignements mode table-cell (0.2ko)
+@import "scss/flexgrid";   // alignements flexbox by LM (5.7ko)
+@import "scss/border";     // bordure (0.9ko)
+@import "scss/typo";       // gestion des styles de texte (2.7ko)
+@import "scss/image";      // effet sur images (0.5)
+@import "scss/box";        // boites pour message (0.8ko)
+@import "scss/effects";    // effet animation de blocs
+@import "scss/table";      // table (0.2ko)
+@import "scss/modal";      // A gérer par UP, il faut mettre des ID (0.3ko)
+
+// en fin pour priorité des règles
+@import "scss/width";      // largeurs responsives (w1, ws2) (1.1ko)
+@import "scss/spacing";    // margin & padding (5ko)
+
+// les règles du webmaster
+// -----------------------
+// créer un fichier _custom.scss, puis décommenter la ligne suivante
+// @import "custom";
+// -----------------------

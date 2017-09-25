@@ -1,0 +1,44 @@
+/*
+			IMPERATIF :
+			la premiere classe des selecteurs doit etre : lmmq-nomstyle
+*/
+
+.lmmq-info .lmmq-out { border:#0074d9 2px solid;background-color:lightcyan }
+
+.lmmq-info .lmmq-lbl { background:#0074d9 }
+
+.lmmq-info .lmmq-lbl > div {transform:rotate(-45deg);display:inline-block;font-size:150%}
+
+.lmmq-info .lmmq-lbl:after {
+	border:solid transparent;
+	content:" ";
+	height:0;
+	width:0;
+	position:absolute;
+	z-index:10;
+	pointer-events:none;
+	border-color: rgba(0,102,153,0);
+	border-width: 15px;
+	margin-top: -15px;
+}
+
+.lmmq-info .lmmq-h-left .lmmq-lbl:after {
+		border-left-color:#0074d9;
+		left: 100%;
+		top: 50%;
+}
+.lmmq-info .lmmq-h-right .lmmq-lbl:after {
+		border-right-color: #0074d9;
+		right: 100%;
+		top: 50%;
+}
+.lmmq-info .lmmq-v-top .lmmq-lbl:after {
+		border-top-color: #0074d9;
+		bottom: 100%;
+		left: 50%;
+}
+.lmmq-info .lmmq-v-bottom .lmmq-lbl:after {
+		border-bottom-color: #0074d9;
+		bottom: 100%;
+		left: 50%;
+	}

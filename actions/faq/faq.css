@@ -1,0 +1,19 @@
+.upfaq {
+    width: 100%;
+}
+
+.upfaq-button {
+    background-color: #069;
+    border-bottom: 1px solid #FFFFFF;
+    cursor: pointer;
+    padding: 10px;
+    color: #FFFFFF;
+    font-weight:bold;
+}
+
+
+.upfaq-content {
+    background-color: #ddd;
+    display: none;
+    padding: 10px;
+}

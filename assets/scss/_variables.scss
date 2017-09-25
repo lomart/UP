@@ -1,0 +1,62 @@
+//
+// TIXY : 00-VARIABLES
+// **********************
+
+
+//-- breakpoints pour mediaqueries
+$breakpoint-s : 480px !default;
+$breakpoint-m : 760px !default;
+
+//-- couleurs de base (utilisé par btn, color, ...)
+$bleuFonce    :	#001f3f !default;	    $rougeFonce   : #8b0000 !default;
+$bleu         : #01457F !default;	    $rouge        : #ff1111 !default;
+$bleuClair    :	#0074D9 !default;	    $rougeClair   : #f08080 !default;
+$bleuTresClair:	#BCE0FF !default;	    $jauneFonce   : #ffc40d !default;
+$vertFonce    : #006400 !default;	    $jaune        : #ffee00 !default;
+$vert         : #46a546 !default;	    $jauneClair   : #ffffe0 !default;
+$vertClair    :	#98fb98 !default;	    $orange       : #ff851b !default;
+$brun         : #a0522d !default;	    $rose         : #f012be !default;
+$beige        : #E8DAC3 !default;	    $violet       : #9400D3 !default;
+//-- les gris
+$noir         : #000 !default;        $blanc        :	#fff !default;
+$grisFonce    :	#333 !default;        $gris         :	#555 !default;
+$grisClair    :	#999 !default;        $grisTresClair:	#eee !default;
+
+//-- couleurs de base du template
+$primary-fonce : $bleu !default;			$primary-clair: $bleuClair !default;
+$second-fonce  : $brun !default;			$second-clair : $beige !default;
+
+//-- couleurs par défaut des textes sur un fond coloré (voir fct colorContraste)
+$text-clair : $blanc !default;
+$text-fonce : $noir !default;
+
+// ========================================================================
+// ==== 03-spacers
+// ========================================================================
+
+// utilisé par ma1, pa2, ...
+$up-space-0: 0 !default;
+$up-space-1: 10px !default;
+$up-space-2: 24px !default;
+$up-space-3: 36px !default;
+
+// utilisé par border (b1, b2, ...)
+$up-border-0: 0 !default;
+$up-border-1: 1px !default;
+$up-border-2: 2px !default;
+$up-border-3: 6px !default;
+
+// utilisé pour les boutons, onglets, ...
+// $radius-mini 	: 3px !default;
+// $radius-small : 3px !default;
+// $radius-base 	: 5px !default;
+// $radius-large : 10px !default;
+
+// liste des valeurs pour width et max-width
+$list-width-percent: 10, 15, 20, 25, 30, 33.3333, 40, 50, 60, 66.6666, 70, 75, 80, 90 !default; // 100 traité à part
+$list-max-width-pixel: 100, 150, 200, 300, 400, 960, 1140, 1240 !default;
+$list-width-pixel: 50,100,150,200,300 !default;
+$list-height-pixel: 2,4,6,50,100,150,200,300 !default;
+
+// ombre par défaut
+$btn-box-shadow : inset 0 1px 0 rgba(255,255,255,.2) !default;

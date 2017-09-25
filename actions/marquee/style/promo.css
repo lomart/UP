@@ -1,0 +1,22 @@
+/*
+			IMPERATIF :
+			la premiere classe des selecteurs doit etre : lmmq-nomstyle
+*/
+
+.lmmq-promo .lmmq-out {
+  border:red 2px dotted;
+  background-color:lightyellow;
+  border-radius: 99px;
+}
+
+.lmmq-promo .lmmq-lbl {
+  background: transparent url(img/rond-rouge.gif) no-repeat center center;
+  background-size:contain;
+  min-width:20px;
+  border-radius: 99px;
+  margin:4px;
+  color: yellow;
+}
+.lmmq-promo .lmmq-msg {
+	color:blue;
+}

@@ -1,0 +1,35 @@
+/*
+			IMPERATIF :
+			la premiere classe des selecteurs doit etre : lmmq-nomstyle
+*/
+
+.lmmq-cahier .lmmq-out {
+  -webkit-box-shadow: 10px 10px 8px -8px rgba(128,128,128,0.3);
+  box-shadow: 10px 10px 8px -8px rgba(128,128,128,0.3);
+}
+
+.lmmq-cahier .lmmq-msg {
+  background: transparent url(img/cahier.png) repeat left top;
+}
+
+.lmmq-cahier .lmmq-lbl div {
+  transform:rotate(-10deg);
+}
+
+.lmmq-cahier .lmmq-lbl {
+  color:red;
+  font-family: cursive;
+}
+
+.lmmq-cahier .lmmq-h-left .lmmq-lbl {
+		border-right:red 2px solid;
+}
+.lmmq-cahier .lmmq-h-right .lmmq-lbl {
+  border-left:red 2px solid;
+}
+.lmmq-cahier .lmmq-v-top .lmmq-lbl {
+  border-bottom:red 2px solid;
+}
+.lmmq-cahier .lmmq-v-bottom .lmmq-lbl {
+  border-top:red 2px solid;
+	}

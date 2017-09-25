@@ -1,0 +1,100 @@
+.transition {
+    -webkit-transition: top 400ms linear;
+    -moz-transition: top 400ms linear;
+    -ms-transition: top 400ms linear;
+    -o-transition: top 400ms linear;
+    transition: top 400ms linear;
+}
+
+.timeTo {
+	font-family: Tahoma, Verdana, Aial, sans-serif;
+	font-size: 28px;
+	line-height: 108%;
+	font-weight: bold;
+	height: 32px;
+}
+
+.timeTo span {
+	vertical-align: top;
+}
+
+.timeTo.timeTo-white div {
+	color: black;
+    background: #ffffff; /* Old browsers */
+    background: -ms-linear-gradient(top, #ffffff 38%,#cccccc 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #ffffff 38%,#cccccc 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+}
+.timeTo.timeTo-black div {
+	color: white;
+    background: #45484d; /* Old browsers */
+    background: -ms-linear-gradient(top, #45484d 0%,#000000 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #45484d 0%,#000000 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
+.timeTo.timeTo-black .timeTo-alert {
+    background: #a74444; /* Old browsers */
+    background: -ms-linear-gradient(top, #a74444 0%,#3f0000 67%); /* IE10+ */
+    background: linear-gradient(to bottom, #a74444 0%,#3f0000 67%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a74444', endColorstr='#3f0000',GradientType=0 ); /* IE6-9 */
+}
+
+.timeTo.timeTo-white .timeTo-alert {
+    background: #ffffff; /* Old browsers */
+    background: -ms-linear-gradient(top, #ffffff 35%,#e17373 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #ffffff 35%,#e17373 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e17373',GradientType=0 ); /* IE6-9 */
+}
+
+.timeTo.timeTo-blue  div  {
+	color:#fff;
+	background: #069; /* Old browsers */
+	background: linear-gradient(to bottom, rgba(4,106,153,1) 0%,rgba(0,102,153,1) 50%,rgba(15,86,158,1) 51%,rgba(0,80,160,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#046a99', endColorstr='#0050a0',GradientType=0 ); /* IE6-9 */
+}
+.timeTo.timeTo-blue .timeTo-alert {
+	color:red;
+}
+
+.timeTo figure {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+.timeTo figcaption {
+	text-align: center;
+	/*font-size: 12px;*/
+	line-height: 80%;
+	font-weight: normal;
+	color: #888;
+}
+
+.timeTo div {
+	position: relative;
+	display: inline-block;
+	width: 25px;
+	height: 34px;  /*LM*/
+	border-top: 1px solid silver;
+	border-right: 1px solid silver;
+	border-bottom: 1px solid silver;
+	overflow: hidden;
+}
+.timeTo div.first {
+	border-left: 1px solid silver;
+}
+
+.timeTo ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	left: 3px;
+}
+
+.timeTo ul li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+	line-height: inherit; /*LM pour protostar */
+}

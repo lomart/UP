@@ -1,0 +1,19 @@
+/* table */
+
+$bcolor: #999 !default;  // couleur des bordures
+
+// table avec uniquement un trait horizontal pour séparer les lignes
+.up-table-line {
+  border: none;
+  th, td {padding-left: 5px; padding-right: 5px;}
+  td {
+    border-bottom: solid 1px $bcolor;
+    vertical-align: top;
+    padding: 5px;
+  }
+  thead {
+    border-bottom: solid 2px $bcolor;
+  }
+  border-top   : solid 2px $bcolor;
+  border-bottom: solid 2px $bcolor;
+}

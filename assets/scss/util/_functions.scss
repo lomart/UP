@@ -1,0 +1,43 @@
+// FONCTIONS UTILITAIRES
+
+// fonction pour gagner quelques octets sur la taille fichier
+	@function arrondi($val, $nb:1000) {
+		@return floor($val * $nb) / $nb;
+	}
+
+// Retourne $vrai si $cond est vrai ou non null.
+//          $faux si $cond est faux ou null.
+@function valif($cond, $vrai, $faux:null) {
+	@if $cond {@return $vrai;}
+	@return $faux;
+}
+
+// Retourne $vrai si $var = NULL
+// valif est la fonction inverse
+@function valifnull($var, $vrai, $faux:null) {
+	@if $var==null {@return $vrai;}
+	@return $faux;
+}
+
+// retourne la valeur de up-space-x
+// les maps ne fonctionnent pas avec les compilateurs SCSS PHP
+@function space($ind) {
+	$out :  $up-space-0;
+	@if $ind==1 {
+		$out: $up-space-1;
+	} @else if $ind==2 {
+		$out: $up-space-2;
+	} @else if $ind==3 {
+		$out: $up-space-3;
+	}
+	@return $out;
+}
+
+// retourne une couleur de texte lisible sur un fond de couleur
+@function colorContraste($color, $clair:$text-clair, $fonce:$text-fonce) {
+	@if (lightness($color)<50%) {
+		@return $clair;
+	}@else{
+		@return $fonce;
+	}
+}

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.4" type="plugin" group="content" method="upgrade">
+    <name>UP</name>
+    <author>LOMART</author>
+    <creationDate>2017-07-02</creationDate>
+    <copyright>Copyright (c) 2015 LOMART. All rights reserved.</copyright>
+    <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+    <authorUrl>lomart.fr</authorUrl>
+    <version>0.4.2</version>
+    <description>PLG_CONTENT_UP_DESC</description>
+
+    <files>
+        <filename plugin="up">up.php</filename>
+        <filename>up.xml</filename>
+        <filename>history.md</filename>
+        <filename>upAction.php</filename>
+        <filename>dico.json</filename>
+        <folder>actions</folder>
+        <folder>assets</folder>
+        <folder>language</folder>
+    </files>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                    name="actionprefs"
+                    type="textarea"
+                    default=""
+                    label="UP_ACTIONPREF_LABEL"
+                    description="UP_ACTIONPREF_DESC"
+                    rows="10"
+                    cols="40"
+                />
+                <field
+                    name="tagname"
+                    type="text"
+                    default="up"
+                    label="UP_TAG_LABEL"
+                    description="UP_TAG_DESC"
+                    size="4"
+                />
+                <field name="loadcss"
+                       type="radio"
+                       class="btn-group"
+                       default="1"
+                       label="UP_CSS_LABEL"
+                       desc="UP_CSS_DESC" >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="usehelpsite"
+                       type="radio"
+                       class="btn-group"
+                       default="2"
+                       label="UP_USEHELPSITE_LABEL"
+                       description="UP_USEHELPSITE_DESC" >
+                    <option value="0">JNO</option>
+                    <option value="1">SELF</option>
+                    <option value="2">BLANK</option>
+                </field>
+                <field
+                    name="urlhelpsite"
+                    type="text"
+                    default="http://up.lomart.fr"
+                    label="UP_URLHELPSITE_LABEL"
+                    description="UP_URLHELPSITE_DESC"
+                    size="4"
+                />
+            </fieldset>
+        </fields>
+    </config>
+
+</extension>

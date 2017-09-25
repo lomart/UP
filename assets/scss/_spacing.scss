@@ -1,0 +1,50 @@
+/* spacing */
+
+// gestion des espaces MARGIN & PADDING
+
+
+@mixin rwd-spacing ( $coderule,   // m ou p
+                     $rule,       // margin ou padding
+                     $bp:''       // s ou m
+) {
+  @for $i from 0 to 4 {
+    .#{$coderule}#{$bp}#{$i}  {#{$rule}:space($i)}
+    .#{$coderule}#{$bp}l#{$i} {#{$rule}-left:space($i)}
+    .#{$coderule}#{$bp}t#{$i} {#{$rule}-top:space($i)}
+    .#{$coderule}#{$bp}r#{$i} {#{$rule}-right:space($i)}
+    .#{$coderule}#{$bp}b#{$i} {#{$rule}-bottom:space($i)}
+    .#{$coderule}#{$bp}h#{$i} {
+      #{$rule}-left:space($i);
+      #{$rule}-right:space($i); }
+    .#{$coderule}#{$bp}v#{$i} {
+      #{$rule}-top:space($i);
+      #{$rule}-bottom:space($i); }
+  }
+  @if $rule=='margin' {
+    .#{$coderule}#{$bp}left {
+      margin-left:auto;
+      margin-right:0;
+    }
+    .#{$coderule}#{$bp}right {
+      margin-left:0;
+      margin-right:auto;
+    }
+    .#{$coderule}#{$bp}center {
+      margin-left:auto;
+      margin-right:auto;
+    }
+  }
+}
+
+@include rwd-spacing('m','margin');
+@include rwd-spacing('p','padding');
+
+@media (max-width:$breakpoint-s) {
+  @include rwd-spacing('m','margin','s');
+  @include rwd-spacing('p','padding','s');
+}
+
+@media (min-width:$breakpoint-s +1) and (max-width:$breakpoint-m) {
+  @include rwd-spacing('m','margin','m');
+  @include rwd-spacing('p','padding','m');
+}

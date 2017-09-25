@@ -1,0 +1,12 @@
+/* BASE = style par defaut */
+
+/************* NE PAS EFFACER CE FICHIER **************/
+
+.lmmq-base .lmmq-out {
+	background-color:ivory;
+	border:1px solid tan;
+}
+.lmmq-base .lmmq-lbl {
+	background-color:tan;
+	color: black;
+}

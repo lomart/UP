@@ -1,0 +1,68 @@
+/* image */
+
+// ============ float
+img.left {
+    float:left;
+    margin-right: 15px;
+}
+img.right {
+    float:right;
+    margin-left: 15px;
+}
+
+// ============ opacité
+.img-opacity,
+.img-hover-opacity:hover{
+    opacity:0.60
+}
+.img-opacity-off{
+    opacity:1
+}
+.img-opacity-max{
+    opacity:0.25
+}
+
+// ============ grey
+.img-grey,
+.img-hover-grey:hover{
+    filter:grayscale(100%)
+}
+.img-grey-min{
+    filter:grayscale(50%)
+}
+
+// ============ SEPIA
+.img-sepia,
+.img-hover-sepia:hover{
+    filter:sepia(100%)
+}
+.img-sepia-min{
+    filter:sepia(50%)
+}
+
+// ============== ANNULATION FILTER
+.img-hover-none:hover{
+    filter:none; opacity:1
+}
+
+// ============== MARGES
+img.img-polaroid,
+a.img-polaroid {
+    border:#fff 10px solid;
+    border-bottom:#fff 40px solid;
+    box-shadow: 0 3px 6px rgba(0,0,0,.25);
+    // transform:rotate(-3deg);
+}
+a.img-polaroid{
+    position: relative;
+    display:inline-block;
+    &::after {
+        position: absolute;
+        content:attr(alt);
+        left:0;
+        bottom:-30px;
+        width:100%;
+        color:#333;
+        text-align:center
+    }
+}

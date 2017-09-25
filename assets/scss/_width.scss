@@ -1,0 +1,29 @@
+/*width*/
+
+@mixin rwd-width-12 ($bp:'') {
+  @for $i from 1 through 12 {
+    .w#{$bp}#{$i}  {width: arrondi($i/12*100)+0%;}
+  }
+  .w#{$bp}auto {width: auto;}
+  .w#{$bp}0 {display: none;}
+}
+// hauteur minimale en pixels
+@mixin rwd-minheight ($bp:'') {
+  @each $i in (0,100,200,400) {
+    .h#{$bp}#{$i}  {min-height: $i+0px;}
+  }
+}
+// ==== APPEL MIXINS POUR LARGEUR ET HAUTEUR
+@include rwd-width-12();
+@include rwd-minheight();
+.hscreen {min-height:100vh}
+
+@media (max-width:$breakpoint-s) {
+  @include rwd-width-12('s');
+  @include rwd-minheight('s');
+}
+
+@media (min-width:$breakpoint-s +1) and (max-width:$breakpoint-m) {
+  @include rwd-width-12('m');
+  @include rwd-minheight('m');
+}
