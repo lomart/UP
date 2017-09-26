@@ -70,5 +70,9 @@
             </fieldset>
         </fields>
     </config>
+    <!-- Update servers -->
+    <updateservers>
+        <server type="extension" priority="1" name="UP - Universal Plugin">https://github.com/lomart/UP/blob/master/updates/plg_content_up_update.xml</server>
+    </updateservers>
 
 </extension>

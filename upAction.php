@@ -35,7 +35,7 @@ class upAction extends plgContentUP {
         return true;
     }
 
-    /*     * *************************************************************** load_file
+    /*     * ***************************************** load_file
      * charge un fichier CSS ou JS du dossier d'une action
      * @param  string  $ficname : nom et extension du fichier
      * @param  string  $ficpath  : chemin si different du dossier de l'action
@@ -68,7 +68,16 @@ class upAction extends plgContentUP {
         }
     }
 
-    /*     * ******************************************************* load_jquery_code
+    /*     * ***************************************** load_upcss
+     * charge un fichier CSS ou JS du dossier d'une action
+     */
+
+    function load_upcss() {
+        JHtml::stylesheet($this->upPath . 'assets/up.css');
+        return true;
+    }
+
+    /*     * ********************************* load_jquery_code
      * ajoute du code jQuery ($code) en l'encapsulant
      * Par défaut le code est ajouté dans le head ($in_head)
      * sinon, il sera à la position d'appel
@@ -90,7 +99,7 @@ class upAction extends plgContentUP {
         }
     }
 
-    /*     * ********************************************************** load_css_head
+    /*     * ************************************ load_css_head
      * Ajoute du code CSS ($code) dans le head
      * */
 
@@ -105,7 +114,7 @@ class upAction extends plgContentUP {
         return false;
     }
 
-    /*     * *************************************************** load_custom_code_head
+    /*     * ***************************** load_custom_code_head
      * Ajoute du code libre ()$code) dans le head de la page
      * exemple :
      * <link href="https://fonts.googleapis.com/css?family=xxx" rel="stylesheet">
@@ -120,7 +129,7 @@ class upAction extends plgContentUP {
         return false;
     }
 
-    /*     * ********************************************************* get_html_contents
+    /*     * *********************************** get_html_contents
      * Récupère un flux sur le web ($url) avec un timeout de 5s ($timeout)
      * @return [string]      [le contenu recuperer]
      */
@@ -141,7 +150,7 @@ class upAction extends plgContentUP {
         }
     }
 
-    /*     * *************************************************************** msg_error
+    /*     * ***************************************** msg_error
      * ajoute un message d'erreur dans la file des messages de Joomla
      * on affiche le nom de l'action tel que saisi par le rédacteur
      */
@@ -151,7 +160,7 @@ class upAction extends plgContentUP {
         $app->enqueueMessage('[UP ' . $this->actionUserName . '] ' . $text, 'error');
     }
 
-    /*     * ***************************************************************** msg_info
+    /*     * ******************************************* msg_info
      * ajoute un message d'information dans la file des messages de Joomla
      * */
 
@@ -160,7 +169,7 @@ class upAction extends plgContentUP {
         $app->enqueueMessage($text, '<b>[UP] ' . $title . '</b>');
     }
 
-    /*     * ************************************************************ get_attr_tag
+    /*     * ************************************** get_attr_tag
      * retourne un array tous les attributs de la balise HTML ($tag)
      * $force est la liste des attributs a créer pour s'assurer de leurs disponibilités
      * ----------------------------------------------
@@ -181,7 +190,7 @@ class upAction extends plgContentUP {
         return $attr;
     }
 
-    /*     * ************************************************************ set_attr_tag
+    /*     * ************************************** set_attr_tag
      * retourne une chaine balise HTML avec ses attributs non vides
      * @var $tag  string  balise HTML
      * @var $attr array   liste des attributs
@@ -210,7 +219,7 @@ class upAction extends plgContentUP {
         return $out;
     }
 
-    /*     * **************************************************************** stradd
+    /*     * ****************************************** stradd
      * Ajoute une chaine a une autre avec separateur si necessaire
      * ******************************* */
 
@@ -252,7 +261,7 @@ class upAction extends plgContentUP {
         return $str;
     }
 
-    /*     * ***************************************************************** ctrl_unit
+    /*     * ******************************************* ctrl_unit
      * Retourne $size complété par $unit[0] si nécessaire
      * auto et inherit ne sont pas géré volontairement
      * @param  [type] $size   valeur. ex: 10px, 10, 15%
@@ -271,7 +280,7 @@ class upAction extends plgContentUP {
         return $size;
     }
 
-    /*     * ************************************************************* link_humanize
+    /*     * *************************************** link_humanize
      * Retourne l'UNC nettoyé des chemins, extensions, underscore et autres tirets
      * @var [string]   chemin fichier ou url
      * @return [string]
@@ -282,7 +291,7 @@ class upAction extends plgContentUP {
         return $unc;
     }
 
-    /*     * ******************************************************* ctrl_content_exists
+    /*     * ********************************* ctrl_content_exists
      * teste si le shortode contient du contenu, affiche un message si besoin
      * @return [bool] [true si contenu]
      */
@@ -311,7 +320,7 @@ class upAction extends plgContentUP {
         return $content_part;
     }
 
-    /*     * ************************************************************ CTRL_OPTIONS
+    /*     * ************************************** CTRL_OPTIONS
      * retourne un array avec toutes les options geres par l'action
      * avec les valeurs saisies dans le shortcode
      * la recherche des keys est case-insensitive
@@ -396,7 +405,7 @@ class upAction extends plgContentUP {
 
 // ctrl_options
 
-    /*     * ****************************************************** only_using_options
+    /*     * ******************************** only_using_options
      * retourne un array avec uniquement les parametres saisi dans le shortcode
      * la recherche des keys est case-insensitive
      * ----------------------------------------------
@@ -427,7 +436,7 @@ class upAction extends plgContentUP {
         return $out;
     }
 
-    /*     * ********************************************************* add_options_json
+    /*     * *********************************** add_options_json
      * ajoute et/ou actualise les options avec celles d'un fichier json
      * ----------------------------------------------
      * Utilisations : paramétres webmaster
@@ -497,7 +506,7 @@ class upAction extends plgContentUP {
         return false;
     }
 
-    /*     * ********************************************************** get_action_pref
+    /*     * ************************************ get_action_pref
      * Retourne la valeur pour une préf action (ex: apikey)
      * @param  [string] $key le mot-clé
      * @return [string]      valeur ou vide
@@ -512,10 +521,10 @@ class upAction extends plgContentUP {
         return false;
     }
 
-    /*     * *************************************************************************
+    /*     * ***************************************************
       FONCTIONS DE GESTION INTERNE UP
-     * ************************************************************************* */
-    /*     * ********************************************************* up_actions_list
+     * *************************************************** */
+    /*     * *********************************** up_actions_list
      * @return [array] la liste des actions
      */
 
@@ -530,7 +539,7 @@ class upAction extends plgContentUP {
         return $list;
     }
 
-    /*     * ******************************************************* set_demopage
+    /*     * ********************************* set_demopage
      * affecte la propriété demopage avec l'URL de la page d'aide
      */
 
@@ -543,7 +552,7 @@ class upAction extends plgContentUP {
         }
     }
 
-    /*     * ******************************************************* get_dico_synonym
+    /*     * ********************************* get_dico_synonym
      * Retourne une liste de tous les synonymes d'un mot-clé
      * @param  [string] $keyword [nom du mot clé]
      * @return [string]      [synonyme sour la forme: 1,un,one,ein ]
@@ -559,7 +568,7 @@ class upAction extends plgContentUP {
         return implode(',', $out);
     }
 
-    /*     * ********************************************************** shortcode2code
+    /*     * ************************************ shortcode2code
      * Retourne la chaine avec un shortcode UP neutralisé
      * @param  [string] $str [ligne à annalyser]
      * @return [string]      [ligne avec shortcode neutralisé]
@@ -572,7 +581,7 @@ class upAction extends plgContentUP {
         return $out;
     }
 
-    /*     * ********************************************************* up_action_infos
+    /*     * *********************************** up_action_infos
      * Retourne les infos dans l'entête du script PHP de l'action
      * @param  [string] $action_name nom de l'action
      * @param  [string] $keys        les infos a chercher
@@ -639,7 +648,7 @@ class upAction extends plgContentUP {
         return $out;
     }
 
-    /*     * ****************************************************** up_action_options
+    /*     * ******************************** up_action_options
      * Retourne un tableau avec les options de l'action
      * @param  [string] $action_name nom de l'action
      * @return [array]  les options sous la forme: option=defaut => commentaire
@@ -692,7 +701,7 @@ class upAction extends plgContentUP {
      *  TRADUCTION
      * ***************************** */
 
-    /*     * **************************************************************** translate
+    /*     * ****************************************** translate
      * retourne la traduction dans la langue utilisateur pour le mot-clé
      * si le motclé commence par xx=, on considère que c'est déjà des trads
      * @param  [type] $keyword [description]
