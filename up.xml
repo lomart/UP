@@ -6,7 +6,7 @@
     <copyright>Copyright (c) 2015 LOMART. All rights reserved.</copyright>
     <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
     <authorUrl>lomart.fr</authorUrl>
-    <version>0.4.2</version>
+    <version>1.0</version>
     <description>PLG_CONTENT_UP_DESC</description>
 
     <files>
@@ -62,7 +62,7 @@
                 <field
                     name="urlhelpsite"
                     type="text"
-                    default="http://up.lomart.fr"
+                    default="https://up.lomart.fr"
                     label="UP_URLHELPSITE_LABEL"
                     description="UP_URLHELPSITE_DESC"
                     size="4"
@@ -72,7 +72,7 @@
     </config>
     <!-- Update servers -->
     <updateservers>
-        <server type="extension" priority="1" name="UP - Universal Plugin">https://github.com/lomart/UP/blob/master/updates/plg_content_up_update.xml</server>
+        <server type="extension" priority="1" name="UP - Universal Plugin">https://lomart.github.io/UP/updates/plg_content_up_update.xml</server>
     </updateservers>
 
 </extension>
