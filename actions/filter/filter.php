@@ -22,7 +22,7 @@ class filter extends upAction {
     }
 
     function run() {
-        // vérifier que du contenu est saisi entre les shortcodes
+        // cette action a obligatoirement du contenu
         if (!$this->ctrl_content_exists()) {
             return false;
         }

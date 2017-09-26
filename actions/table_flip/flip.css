@@ -1,0 +1,76 @@
+.fliptable {
+  display: block;
+  width: 100%;
+  margin: 1em 0;
+}
+
+.fliptable thead, .fliptable tbody, .fliptable thead tr, .fliptable th {
+  display: block;
+}
+
+.fliptable thead {
+  float: left;
+}
+
+.fliptable tbody {
+  width: auto;
+  position: relative;
+  overflow-x: auto;
+}
+
+.fliptable td, .fliptable th {
+  padding: .625em;
+  line-height: 1.5em;
+  border-bottom: 1px dashed #ccc;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.fliptable th {
+  text-align: left;
+  background: rgba(0, 0, 0, 0.14);
+  border-bottom: 1px dashed #aaa;
+}
+
+.fliptable tbody tr {
+  display: table-cell;
+}
+
+.fliptable tbody td {
+  display: block;
+  white-space:  nowrap; /* ajout LM */
+}
+
+.fliptable tr:nth-child(odd) {
+	background: rgba(0, 0, 0, 0.07);
+}
+
+@media screen and (min-width: 50em) {
+
+  .fliptable {
+    display: table;
+  }
+
+  .fliptable thead {
+    display: table-header-group;
+    float: none;
+  }
+
+  .fliptable tbody {
+    display: table-row-group;
+  }
+
+  .fliptable thead tr, .fliptable tbody tr {
+    display: table-row;
+  }
+
+  .fliptable th, .fliptable tbody td {
+    display: table-cell;
+  }
+
+  .fliptable td, .fliptable th {
+    width: auto;
+  }
+
+}

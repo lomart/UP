@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<updates>
+    <update>
+        <name>UP</name>
+        <description>UP (Universal Plugin)</description>
+        <element>up</element>
+        <type>plugin</type>
+        <folder>content</folder>
+        <client>0</client>
+        <version>0.9</version>
+        <downloads>
+            <downloadurl type="full" format="zip">https://github.com/lomart/UP/blob/master/updates/plg_content_up-v0.9.zip?raw=true</downloadurl>
+        </downloads>
+        <maintainer>LOMART</maintainer>
+        <maintainerurl>http://up.lomart.fr</maintainerurl>
+        <targetplatform name="joomla" version="3.[012345678]"/>
+    </update>
+</updates>

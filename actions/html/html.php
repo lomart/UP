@@ -27,6 +27,7 @@ class html extends upAction {
 
     function run() {
 
+        // contenu non obligatoire, ex: IMG
         // lien vers la page de demo (vide=page sur le site de UP)
         $this->set_demopage();
 

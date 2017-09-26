@@ -6,10 +6,7 @@
  * Exemples :
  * date actuelle :  {up php=echo date('d-m-Y H:i:s');}
  * langage : {up php=echo JFactory::getLanguage()getTag(); }
- * nom user : {up php=
- *   $user = JFactory::getUser();
- *   echo  ($user->guest!=1) ? $user->username : 'invité';
- * }
+ * nom user : {up php=  $user = JFactory::getUser(); echo  ($user->guest!=1) ? $user->username : 'invité'; }
  *
  * @author   LOMART
  * @version  1.0

@@ -25,6 +25,7 @@ class cell extends upAction {
     }
 
     function run() {
+
         if (!$this->ctrl_content_exists()) {
             return false;
         }

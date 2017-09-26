@@ -14,11 +14,16 @@ defined('_JEXEC') or die;
 class flexauto extends upAction {
 
     function init() {
+        // charge la feuille de style UP
+        $this->load_upcss();
         return true;
     }
 
     function run() {
 
+        if (!$this->ctrl_content_exists()) {
+            return false;
+        }
         // lien vers la page de demo (vide=page sur le site de UP)
         $this->set_demopage();
 

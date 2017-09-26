@@ -2,39 +2,39 @@
 
 // ======= MIXINS
 @mixin rwd-fontsize ($bp:'') {
-  @each $i in (80, 90, 100, 120, 150, 200, 300, 400, 500) {
-    .fs#{$bp}#{$i}  {font-size: $i*1%;}
-  }
+    @each $i in (80, 90, 100, 120, 150, 200, 300, 400, 500) {
+        .fs#{$bp}#{$i}  {font-size: $i*1%;}
+    }
 }
 @mixin rwd-lineheight ($bp:'') {
-  @each $i in (80, 90, 100, 120, 150, 200, 300, 400, 500) {
-    .lh#{$bp}#{$i}  {line-height: $i*1%;}
-  }
+    @each $i in (80, 90, 100, 120, 150, 200, 300, 400, 500) {
+        .lh#{$bp}#{$i}  {line-height: $i*1%;}
+    }
 }
 // ======= FONTSIZE & HAUTEUR DE LIGNE
 @include rwd-fontsize();
 @include rwd-lineheight();
 
 @media (max-width:$breakpoint-s) {
-  @include rwd-fontsize('s');
-  @include rwd-lineheight('s');
+    @include rwd-fontsize('s');
+    @include rwd-lineheight('s');
 }
 
 @media (min-width:$breakpoint-s +1) and (max-width:$breakpoint-m) {
-  @include rwd-fontsize('m');
-  @include rwd-lineheight('m');
+    @include rwd-fontsize('m');
+    @include rwd-lineheight('m');
 }
 
 // ======= CESURE
 .cesure {  // pas de césure
-  -webkit-hyphens:auto;
-  hyphens:auto;
-  word-wrap:break-word;
+           -webkit-hyphens:auto;
+           hyphens:auto;
+           word-wrap:break-word;
 }
 .nocesure {  // pas de césure
-  -webkit-hyphens:none;
-  hyphens:none;
-  word-wrap:normal;
+             -webkit-hyphens:none;
+             hyphens:none;
+             word-wrap:normal;
 }
 .nowrap  { white-space: nowrap}   // un seul saut ligne si BR
 .scrollx { overflow-x: scroll;}
@@ -50,66 +50,67 @@ span.ph1 {padding-left:5px;padding-right:5px}
 .list-none {list-style:none outside; margin-left:0}
 // -- liste en ligne
 .list-inline {
-  margin-left: 0;
-  list-style: none;
-  > li {
-    display: inline-block;
-	  padding-left: 5px; // annule bs3
-    margin-right: 0;
-    &:not(:last-child):after { content: ' \2022 '; }
-  }
+    margin-left: 0;
+    list-style: none;
+    > li {
+        display: inline-block;
+        padding-left: 5px; // annule bs3
+        margin-right: 0;
+        &:not(:last-child):after { content: ' \2022 '; }
+    }
 }
 .list-inline-sep {
-  @extend .list-inline;
-	li:not(:last-child):after { content: " | "; }
+    @extend .list-inline;
+    li:not(:last-child):after { content: " | "; }
 }
 .list-inline-none {
-  @extend .list-inline;
-	li:not(:last-child):after { content: ""; }
+    @extend .list-inline;
+    li:not(:last-child):after { content: ""; }
 }
 .list-inline-dash {
-  @extend .list-inline;
-	li:not(:last-child):after { content: " \2013 "; }
+    @extend .list-inline;
+    li:not(:last-child):after { content: " \2013 "; }
 }
 
 // ======= LISTE DEFINITION
 dl.horiz {
-  @extend .clear;
-  border-bottom: 1px solid $grisClair;
-  dt {
-    padding:10px 0 0 0;
-    border-top: 1px solid $grisClair
-  }
-  dd {
-    padding:10px 0 10px 0;
-  }
-  @media (min-width:$breakpoint-m) {
+    @extend .clear;
+    border-bottom: 1px solid $grisClair;
     dt {
-      float: left;
-      width: 180px;
-      clear: left;
-      text-align: right;
+        padding:10px 0 0 0;
+        border-top: 1px solid $grisClair
     }
     dd {
-      padding-left: 200px;
-      border-top: 1px solid $grisClair;
+        padding:10px 0 10px 0;
     }
-    &.large {
-      dt {width: 240px;}
-      dd {padding-left: 260px;}
+    @media (min-width:$breakpoint-m) {
+        dt {
+            float: left;
+            width: 180px;
+            clear: left;
+            text-align: right;
+        }
+        dd {
+            padding-left: 200px;
+            border-top: 1px solid $grisClair;
+        }
+        &.large {
+            dt {width: 240px;}
+            dd {padding-left: 260px;}
+        }
     }
-  }
 }
 
 // ======= TEXTE EN COLONNES
 @media (min-width:$breakpoint-s +1) {
-  .text-col-2 {
-  column-count: 2;
-  column-gap: 20px;
-  column-rule: 1px solid #999;
-  }.text-col-3 {
-  column-count: 3;
-  column-gap: 20px;
-  column-rule: 1px solid #999;
-  }
+    .text-col-2 {
+        column-count: 2;
+        column-gap: 20px;
+        column-rule: 1px solid #999;
+    }.text-col-3 {
+        column-count: 3;
+        column-gap: 20px;
+        column-rule: 1px solid #999;
+    }
 }
+// note: on peut empecher le saut de colonne au milieu d'un bloc en l'entourant par un display:inline-block

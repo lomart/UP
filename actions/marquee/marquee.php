@@ -24,6 +24,10 @@ class marquee extends upAction {
     }
 
     function run() {
+        // cette action a obligatoirement du contenu
+        if (!$this->ctrl_content_exists()) {
+            return false;
+        }
         // lien vers la page de demo (vide=page sur le site de UP)
         $this->set_demopage();
 

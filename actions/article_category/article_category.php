@@ -7,6 +7,9 @@
  *
  * Une action très pratique pour lister les articles de la catégorie en cours, il suffit de taper {up article-category}
  *
+ * TODO: gestion contenu affiché. ex: #TITRE# (#DATE#). Prévoir modèle par défaut dans actionprefs
+ * TODO: filtre sur vue pour afficher uniquement en vue blog, article, ...
+ *
  * @author   LOMART
  * @version  1.0
  * @license   <a href="http://www.gnu.org/licenses/gpl-3.0.html" target="_blank">GNU/GPLv3</a>

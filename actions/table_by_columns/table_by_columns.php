@@ -25,11 +25,12 @@ class table_by_columns extends upAction {
 
     function run() {
 
+        // cette action a obligatoirement du contenu
+        if (!$this->ctrl_content_exists()) {
+            return false;
+        }
         // lien vers la page de demo (vide=page sur le site de UP)
         $this->set_demopage();
-
-        // affiche un message en l'absence de contenu
-        $this->ctrl_content_exists();
 
         // ===== valeur paramétres par défaut
         // il est indispensable tous les parametres generaux
