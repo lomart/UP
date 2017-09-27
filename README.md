@@ -42,3 +42,46 @@ Voir démo sur http://up.lomart.fr
 Initiateur : Loïc Martin (aka Lomart) | https://up.lomart.fr 
 
 Les actions utilisent des scripts libres trouvés sur le Net. Les liens vers les auteurs se trouvent dans la documentation des actions concernées. 
+
+----------------------
+This plugin for joomla allows to insert content in articles and modules.
+
+It consists of basic scripts whose role is to analyze the shortcodes entered by the article's editor to direct it to an action script that will process it and return an HTML content to be displayed.
+
+By its concept, UP is intended to be complemented by new actions as and when needs and contributions of different developers.
+
+See demo at http://up.lomart.fr
+
+It is intended for several types of users of Joomla:
+
+- The novice:
+  - UP offers a lot of features in French.
+  - Research on JED and installation of multiple extensions are avoided.
+  - UP avoids, in many cases, switching to code mode with TinyMCE and JCE and editing CSS files.
+  - On a forum, it is easy to provide a shortcode to help perform delicate operations.
+- The webmaster:
+  - it is easy enough to explain to a customer how to use it.
+  - UP can create an input interface that prevents its client from entering HTML.
+  - UP can customize the style of a page directly from an article.
+  - UP avoids the installation of multiple extensions
+- The programmer:
+  - the recovery phase of the shortcode and its options is unnecessary, one enters directly into the heart of the need: code functionality.
+  - It is easy and fast to test a feature or a script found on the Net
+  - UP handles multilanguage in display and when entering shortcodes
+  - UP is lightweight for Joomla. Deleting an action leaves no trace.
+
+The basic rules for the design of this plugin:
+
+- 99% compatibility with wysiwyg editors (TinyMCE, JCE ...)
+- accessible and up-to-date documentation. It is built automatically by reading the action script. It can be translated.
+- minimal impact on Joomla. An unused action is only the disk space, not server resources
+- the possibility of adding new actions for people with PHP basic knowledge
+- the French language has priority with the possibility of a translation during the displays, but especially for the input of the instructions
+- an installation / uninstallation of the actions only by the addition / deletion of its file
+- the core of the plugin is updated automatically by the Joomla update procedure. Your custom actions are not changed.
+
+Credits
+
+Initiator: Loïc Martin (aka Lomart) | https://up.lomart.fr
+
+Actions use free scripts found on the Net. Links to the authors can be found in the documentation of the actions concerned.
