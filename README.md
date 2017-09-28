@@ -1,8 +1,6 @@
 ![LOGO UP](https://up.lomart.fr/images/template/up-logo-carre.png)
 
-Universal Plugin for Joomla
-
-Ce plugin pour joomla permet d'insérer du contenu dans les articles et les modules. 
+Ce plugin pour joomla permet d'insérer du contenu dans les articles et les modules du CMS **Joomla!**. 
 
 Il se compose de scripts de base qui ont pour rôle d'analyser les shortcodes saisis par le rédacteur de l'article pour le diriger vers un script action qui le traitera et renverra le contenu HTML à afficher.
 
