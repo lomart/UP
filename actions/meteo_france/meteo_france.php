@@ -69,8 +69,11 @@ class meteo_france extends upAction {
         $url .= '/type/VILLE_FRANCE/size/';
         $url .= $sens;
 
-        // $meteo = file_get_contents($url);
         $meteo = $this->get_html_contents($url, 10);
+        // ajout détection erreur de Pascal Leconte
+        if (preg_match("/Erreur :/", $meteo)) { // erreur dans l'appel meteo France
+            return $this->info_debug('M&eacute;t&eacute;o France: ' . $meteo);
+        }
         $meteo = str_replace('<head>', '', $meteo);
         $meteo = str_replace('</head>', '', $meteo);
         $meteo = str_replace('http://logc279', 'https://logs', $meteo);
