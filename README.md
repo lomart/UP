@@ -1,6 +1,6 @@
 ![LOGO UP](https://up.lomart.fr/images/template/up-logo-carre.png)
 
-Ce plugin pour joomla permet d'insérer du contenu dans les articles et les modules du CMS **Joomla!**. 
+Ce plugin pour **Joomla!** permet d'insérer du contenu dans les articles et les modules. 
 
 Il se compose de scripts de base qui ont pour rôle d'analyser les shortcodes saisis par le rédacteur de l'article pour le diriger vers un script action qui le traitera et renverra le contenu HTML à afficher.
 
@@ -43,7 +43,7 @@ Initiateur : Loïc Martin (aka Lomart) | https://up.lomart.fr
 Les actions utilisent des scripts libres trouvés sur le Net. Les liens vers les auteurs se trouvent dans la documentation des actions concernées. 
 
 ----------------------
-This plugin for joomla allows to insert content in articles and modules.
+This plugin for **Joomla!** allows to insert content in articles and modules.
 
 It consists of basic scripts whose role is to analyze the shortcodes entered by the article's editor to direct it to an action script that will process it and return an HTML content to be displayed.
 
