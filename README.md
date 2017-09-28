@@ -1,4 +1,5 @@
-# UP
+![LOGO UP](https://up.lomart.fr/images/template/up-logo-carre.png)
+
 Universal Plugin for Joomla
 
 Ce plugin pour joomla permet d'insérer du contenu dans les articles et les modules. 
